@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import '_User';
+
+
+.repo-item{
+   width:fit-content;
+
+}
+.repo-item .card{
+    padding:0 10px;
+}
+

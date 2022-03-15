@@ -1,0 +1,15 @@
+.not-found-user{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.not-found-user .logo{
+    font-size:128px;
+}
+
+@media screen and (max-width: 376px) {
+    .user-item-wrapper {
+        background-color: red;
+    }
+}
