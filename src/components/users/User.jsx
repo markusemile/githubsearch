@@ -14,9 +14,9 @@ import { getUserAndRepos} from '../../context/github/GitHubActions';
 function User() {
     
     const pseudo = useParams().login;
-    const {user,loading,dispatch,repos} = useContext(GithubContext);
+    const {user,loading,dispatch} = useContext(GithubContext);
 
-    // console.log(user);
+
     const {
         login,
         name,
@@ -39,16 +39,8 @@ function User() {
     
 
     useEffect(()=>{    
-       dispatch({type:'SET_LOADING'})
-    //    const getUserData = async()=>{
-    //        const userData = await getUser(pseudo)
-    //        dispatch({type:'GET_USER',payload:userData})
-
-    //        const userRepos = await getRepos(pseudo)
-    //        dispatch({type:'GET_REPOS',payload:userRepos})
-    //     }
-      
-    //     getUserData();
+        //alert();
+      // dispatch({type:'SET_LOADING'})  
         const getDatas = async() => {
             const datas = await getUserAndRepos(pseudo)
             dispatch({type:'GET_USER_AND_REPOS',payload:datas}); 

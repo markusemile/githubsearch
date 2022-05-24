@@ -6,7 +6,7 @@ import { searchUser } from '../../context/github/GitHubActions';
 
  function UserSearch() {
      const [text, setText] = useState("")
-     const {clearUsers,dispatch} = useContext(GithubContext); 
+     const {dispatch} = useContext(GithubContext); 
      const {setAlert} = useContext(AlertContext);
 
      const handleChange = (e) => setText(e.target.value);
@@ -18,15 +18,12 @@ import { searchUser } from '../../context/github/GitHubActions';
         }else {
             dispatch({type:"SET_LOADING"})
             const users = await searchUser(text);
-            // console.log(users);
             dispatch({type:'GET_USERS',payload:users})
             setText('');
         }
      }  
 
-     const handleClick = () =>{
-        clearUsers();
-     }
+
 
    return (
      <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8">
